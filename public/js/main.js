@@ -186,7 +186,9 @@
   }
 
   /*----------- 07. Hero Slider Active ----------*/
-  $(".vs-hero-carousel").each(function () {
+  window.initHeroSlider = function() {
+    $(".vs-hero-carousel").each(function () {
+      if ($(this).hasClass("ls-container")) return;
     var vsHslide = $(this);
 
     // Get Data From Dom
@@ -214,10 +216,13 @@
       skinsPath: "layerslider/skins/",
       thumbnailNavigation: d("thumbnailnavigation") === false ? false : true,
     });
-  });
+  };
+  window.initHeroSlider();
 
   /*----------- 08. Global Slider ----------*/
-  $(".vs-carousel").each(function () {
+  window.initGlobalSlider = function() {
+    $(".vs-carousel").each(function () {
+      if ($(this).hasClass("slick-initialized")) return;
     var asSlide = $(this);
 
     // Collect Data
@@ -350,6 +355,8 @@
       ],
     });
   });
+  };
+  window.initGlobalSlider();
 
   /*----------- 09. Ajax Contact Form ----------*/
   var form = ".ajax-contact";
