@@ -195,3 +195,25 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import { onMounted, onBeforeUnmount } from 'vue'
+
+let initInterval = null;
+
+onMounted(() => {
+    // Wait for the scripts to be fully loaded and initialize the slider
+    initInterval = setInterval(() => {
+        if (window.initHeroSlider && window.jQuery && window.jQuery.fn.layerSlider) {
+            window.initHeroSlider();
+            clearInterval(initInterval);
+        } else {
+            console.log("Waiting for layerSlider...", !!window.initHeroSlider, !!window.jQuery, !!(window.jQuery && window.jQuery.fn.layerSlider));
+        }
+    }, 100);
+});
+
+onBeforeUnmount(() => {
+    if (initInterval) clearInterval(initInterval);
+});
+</script>

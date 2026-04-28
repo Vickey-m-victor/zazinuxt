@@ -11,9 +11,9 @@ export default defineNuxtPlugin(() => {
     '/js/jquery.fancybox.js',
     '/js/jquery.magnific-popup.min.js',
     '/js/jquery.waypoints.min.js',
-    '/js/layerslider.kreaturamedia.jquery.js',
-    '/js/layerslider.transitions.js',
     '/js/layerslider.utils.js',
+    '/js/layerslider.transitions.js',
+    '/js/layerslider.kreaturamedia.jquery.js',
     '/js/slick.min.js',
     '/js/main.js'
   ]

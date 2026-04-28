@@ -216,6 +216,7 @@
       skinsPath: "layerslider/skins/",
       thumbnailNavigation: d("thumbnailnavigation") === false ? false : true,
     });
+  });
   };
   window.initHeroSlider();
 
